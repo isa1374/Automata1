@@ -3,9 +3,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 import java.io.LineNumberReader; 
+import java.util.ArrayList;
 
 public class Principal {
-
+	
+	static ArrayList <String>trans;
 	public static void main(String[] args) {
 		try{
 			File file = new File("C:/Users/isha1_000/Documents/Isa/ITC/7to Semestre/Matemáticas Computacionales/Proyecto/PrimeraParte/A1.txt");
@@ -19,15 +21,10 @@ public class Principal {
 			String [] simb = null; 
 			String [] inicio = null; 
 			String [] fnl = null;
-			String [] trans = null; 
-			int countLine=0; 
-			
-			while((num.readLine())!= null){
-				countLine++;
-			}
+
 			
 			//Lectura del doc y llenado de arreglos
-			while ((num.readLine()) != null){
+			do{
 				switch (num.getLineNumber()){
 					case 0:
 						line= num.readLine(); 
@@ -52,18 +49,21 @@ public class Principal {
 						//System.out.println(line); 
 						fnl = line.split(","); 
 						//System.out.println(fnl[0].toString());
-					
+						
 					default:
-						break;
+						line=num.readLine(); 
+						trans.add(line);
 				}
-			}; 
+			}while ((num.readLine()) != null); 
 			
+			trans.get(0);
 			
 			num.close();
 		}
 		catch (IOException e){
 			
 		}
+		
 		
 		
 	}
