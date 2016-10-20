@@ -6,13 +6,14 @@ import java.io.LineNumberReader;
 import java.util.ArrayList;
 
 public class Principal {
+	static ArrayList <String> trans = new ArrayList<String>();
 	public static void main(String[] args) {
 		
 		String [] estados = null;
 		String [] alf = null; 
 		String [] inicio = null; 
 		String [] fnl = null;
-		ArrayList <String> trans = new ArrayList<String>();
+		
 	
 		try{
 			File file = new File("C:/Users/isha1_000/Documents/Isa/ITC/7to Semestre/Matemáticas Computacionales/Proyecto/PrimeraParte/A1.txt");
@@ -62,7 +63,6 @@ public class Principal {
 		catch (IOException e){
 			System.out.println("Error");
 		}
-		
 	}
 	
 }
