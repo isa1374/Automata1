@@ -65,28 +65,6 @@ public class Principal {
 		}
 		
 		//Separación 
-		String linea=null;
-		String [] ef=null; 
-		String [] aux=null;
-		String [] txt=null;
-		
-		
-		aux=trans.get(0).split("->");
-		txt=aux[0].split(",");
-		linea=txt[1].toString();
-		
-		
-		
-		
-		
-		
-		System.out.println(aux[0].toString()+"   "+
-		aux[1].toString());
-		System.out.println(linea);
-		
-		
-		
-		
 		
 		
 		
