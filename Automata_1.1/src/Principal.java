@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.LineNumberReader; 
 import java.util.ArrayList;
 import java.util.HashMap; 
+import java.util.Iterator;
+import java.util.Map;
 
 public class Principal {
 	static ArrayList <String> trans = new ArrayList<String>();
@@ -78,11 +80,15 @@ public class Principal {
 				aux=trans.get(i).split("->"); 
 				aux2=aux[0].split(","); 
 				hm.put(aux2[1].toString(), aux[1].toString());
-				//System.out.println(hm.entrySet());
+				System.out.println(hm.entrySet());
 				pr.put(aux2[0],	 hm);
-				System.out.println(pr.entrySet());
 			};
+			//System.out.println(pr.entrySet());
+			
 		}
+		//new HashMap con un arrayList con los estados resultantes
+		
+		
 	}
 	
 }
