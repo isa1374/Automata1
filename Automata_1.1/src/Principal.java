@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.File;
 import java.io.LineNumberReader; 
 import java.util.ArrayList;
+import java.util.HashMap; 
 
 public class Principal {
 	static ArrayList <String> trans = new ArrayList<String>();
@@ -65,7 +66,7 @@ public class Principal {
 		}
 		
 		//Separación 
-		
+		HashMap<String, >
 		
 		
 	}
