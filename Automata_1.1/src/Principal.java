@@ -66,9 +66,23 @@ public class Principal {
 		}
 		
 		//Separación 
-		HashMap<String, >
+		HashMap<String,HashMap<String, String>> pr= new HashMap<>(); 
+		HashMap<String, String> hm = new HashMap<>(); 
 		
+		String [] aux; 
+		String [] aux2 = null;
 		
+		for(int i=0; i<trans.size(); i++){
+			hm=new HashMap<>();
+			if(trans.get(i)!= null){
+				aux=trans.get(i).split("->"); 
+				aux2=aux[0].split(","); 
+				hm.put(aux2[1].toString(), aux[1].toString());
+				//System.out.println(hm.entrySet());
+				pr.put(aux2[0],	 hm);
+				System.out.println(pr.entrySet());
+			};
+		}
 	}
 	
 }
