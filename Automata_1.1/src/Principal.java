@@ -70,18 +70,20 @@ public class Principal {
 		catch (IOException e){
 			System.out.println("Error");
 		}
-		//Separación 
+		//Separación en un mapeo múltiple
 		ListMultimap<String,HashMap<String,String>> pr = ArrayListMultimap.create();
 		HashMap<String,String> me= new HashMap<>(); 
 		
 		String[]aux=null;
 		String[]aux2=null; 
+		ArrayList <String> nuevosEstados=null;
 		
 		for(int i=0; i<trans.size(); i++){
 			me= new HashMap<>();
 			if(trans.get(i)!=null){
 				aux= trans.get(i).split("->"); 
 				aux2=aux[0].split(","); 
+				nuevosEstados.add(aux[1].toString());
 					
 				me.put(aux2[1].toString(), aux[1].toString()); 
 				//System.out.println(me.entrySet());
@@ -93,7 +95,7 @@ public class Principal {
 			System.out.println(key +"="+ pr.get(key));
 		}
 		
-		//new HashMap con un arrayList con los estados resultantes
+	
 		
 		
 	}
