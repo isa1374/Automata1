@@ -100,6 +100,7 @@ public class Principal {
 		}*/
 		
 		//Tabla de transiciones 
+		System.out.println("Tabla de transiciones");
 		String tabla [][]= new String[estados.length+1][alf.length+1];
 		int o,p=1; 
 		tabla[0][0]=null;
