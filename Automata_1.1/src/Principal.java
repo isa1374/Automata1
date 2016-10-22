@@ -4,10 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import com.google.common.collect.*;
 
@@ -83,20 +80,45 @@ public class Principal {
 			if(trans.get(i)!=null){
 				aux= trans.get(i).split("->"); 
 				aux2=aux[0].split(","); 
-				nuevosEstados.add(aux[1].toString());
+				boolean con=nuevosEstados.contains(aux[1].toString());
+				if(con != true){
+					nuevosEstados.add(aux[1].toString());
+				}
 				me.put(aux2[1].toString(), aux[1].toString()); 
 				//System.out.println(me.entrySet());
 				pr.put(aux2[0].toString(), me);
 			}
 		}
 		//Print Map
-		for(String key: pr.keySet()){
+		/*for(String key: pr.keySet()){
 			System.out.println(key +"="+ pr.get(key));
-		}
-		for(int m=0; m<nuevosEstados.size();m++){
+		}*/
+		
+		//Lista estados finales comprobación 
+		/*for(int m=0; m<nuevosEstados.size();m++){
 			System.out.println(nuevosEstados.get(m));
+		}*/
+		
+		//Tabla de transiciones 
+		String tabla [][]= new String[estados.length+1][alf.length+1];
+		int o,p=1; 
+		tabla[0][0]=null;
+		for(o=1; o<estados.length+1; o++){
+			tabla[o][0]=estados[o-1].toString();
+			for(p=1; p<alf.length+1;p++){
+				tabla[0][p]=alf[p-1].toString();
+			}
 		}
-		
-		
+		for(String[] row: tabla ){
+			printRow(row);
+		}
+	
+	}
+	public static void printRow(String[]row){
+		for(String i: row){
+			System.out.print(i);
+			System.out.print("\t");
+		}
+		System.out.println();
 	}
 }
