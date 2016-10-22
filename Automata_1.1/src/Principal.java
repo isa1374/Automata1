@@ -90,11 +90,7 @@ public class Principal {
 		}
 		//Print Map
 		for(String key: pr.keySet()){
-			List<HashMap<String, String>> list = (List<HashMap<String,String>>)pr.get(key);
-			for(int m=0; m<list.size();m++){
-				System.out.println(key +"="+list.get(m));
-				
-			}
+			System.out.println(key +"="+ pr.get(key));
 		}
 		
 		//new HashMap con un arrayList con los estados resultantes
