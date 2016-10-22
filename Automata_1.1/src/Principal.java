@@ -11,6 +11,7 @@ import com.google.common.collect.*;
 
 public class Principal {
 	static ArrayList <String> trans = new ArrayList<String>();
+	static ArrayList <String> nuevosEstados=new ArrayList<>();
 	public static void main(String[] args) {
 		
 		String [] estados = null;
@@ -73,7 +74,7 @@ public class Principal {
 		
 		String[]aux=null;
 		String[]aux2=null; 
-		ArrayList <String> nuevosEstados=new ArrayList<>();
+		
 		
 		for(int i=0; i<trans.size(); i++){
 			me= new HashMap<>();
@@ -113,6 +114,35 @@ public class Principal {
 		for(String[] row: tabla ){
 			printRow(row);
 		}
+		
+		//Mapa de transiciones finales 
+		ListMultimap<String,HashMap<String,String>> tfinl = ArrayListMultimap.create();
+		HashMap<String,String> mox= new HashMap<>();
+		
+		ArrayList<String>ef= new ArrayList<>();
+		int b,h=0; 
+		String []help;
+
+		for(b=0; b<nuevosEstados.size(); b++){
+			for(h=0; h<alf.length; h++){
+				if(pr.containsKey(nuevosEstados.get(b))==true&& me.containsKey(alf[h].toString())==true){
+					mox.put(alf[h].toString(), me.get(alf[h].toString()));
+					tfinl.put(nuevosEstados.get(b), mox);
+				}else{
+					help=nuevosEstados.get(b).split(","); 
+					for(int ne=0; ne<help.length; ne++){
+						if(pr.containsKey(help[ne].toString())==true && (me.containsKey(alf[h])==true)){
+							mox.put(alf[h], me.get(alf[h].toString()));
+							tfinl.put(help[ne].toString(), mox);
+						}
+					}
+				}
+			}
+		}
+		for(String key: tfinl.keySet()){
+		System.out.println(key +"="+ tfinl.get(key));
+		}
+		
 	
 	}
 	public static void printRow(String[]row){
