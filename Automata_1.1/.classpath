@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_74"/>
+	<classpathentry kind="lib" path="C:/Users/isha1_000/Documents/GitHub/Automata1/Automata_1.1/common-collections-multimap-1.0.3.jar.zip"/>
+	<classpathentry kind="lib" path="C:/Users/isha1_000/Documents/GitHub/Automata1/Automata_1.1/guava-19.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

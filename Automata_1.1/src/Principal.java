@@ -1,12 +1,16 @@
-import java.io.BufferedReader; 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.File;
-import java.io.LineNumberReader; 
+import java.io.LineNumberReader;
 import java.util.ArrayList;
-import java.util.HashMap; 
-import java.util.Iterator;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.google.common.collect.*;
+
 
 public class Principal {
 	static ArrayList <String> trans = new ArrayList<String>();
@@ -66,28 +70,33 @@ public class Principal {
 		catch (IOException e){
 			System.out.println("Error");
 		}
-		
 		//Separación 
-		HashMap<String,HashMap<String, String>> pr= new HashMap<>(); 
-		HashMap<String, String> hm = new HashMap<>(); 
+		ListMultimap<String,HashMap<String,String>> pr = ArrayListMultimap.create();
+		HashMap<String,String> me= new HashMap<>(); 
 		
-		String [] aux=null;
-		String [] aux2=null;
-		
+		String[]aux=null;
+		String[]aux2=null; 
 		
 		for(int i=0; i<trans.size(); i++){
-			hm=new HashMap<>();
-			if(trans.get(i)!= null){
-				for(int n=1; n<2; n++){
-					aux=trans.get(i).split("->"); 
-					aux2=aux[0].split(","); 
-					hm.put(aux2[1].toString(), aux[1].toString());
-				}
-				System.out.println(hm.entrySet());
-				pr.put(aux2[0], hm);
-				System.out.println(pr.entrySet());
-			};	
+			me= new HashMap<>();
+			if(trans.get(i)!=null){
+				aux= trans.get(i).split("->"); 
+				aux2=aux[0].split(","); 
+					
+				me.put(aux2[1].toString(), aux[1].toString()); 
+				//System.out.println(me.entrySet());
+				pr.put(aux2[0].toString(), me);
+			}
 		}
+		//Print Map
+		for(String key: pr.keySet()){
+			List<HashMap<String, String>> list = (List<HashMap<String,String>>)pr.get(key);
+			for(int m=0; m<list.size();m++){
+				System.out.println(key +"="+list.get(m));
+				
+			}
+		}
+		
 		//new HashMap con un arrayList con los estados resultantes
 		
 		
