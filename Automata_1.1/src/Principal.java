@@ -76,7 +76,7 @@ public class Principal {
 		
 		String[]aux=null;
 		String[]aux2=null; 
-		ArrayList <String> nuevosEstados=null;
+		ArrayList <String> nuevosEstados=new ArrayList<>();
 		
 		for(int i=0; i<trans.size(); i++){
 			me= new HashMap<>();
@@ -84,7 +84,6 @@ public class Principal {
 				aux= trans.get(i).split("->"); 
 				aux2=aux[0].split(","); 
 				nuevosEstados.add(aux[1].toString());
-					
 				me.put(aux2[1].toString(), aux[1].toString()); 
 				//System.out.println(me.entrySet());
 				pr.put(aux2[0].toString(), me);
@@ -94,10 +93,10 @@ public class Principal {
 		for(String key: pr.keySet()){
 			System.out.println(key +"="+ pr.get(key));
 		}
-		
-	
+		for(int m=0; m<nuevosEstados.size();m++){
+			System.out.println(nuevosEstados.get(m));
+		}
 		
 		
 	}
-	
 }
