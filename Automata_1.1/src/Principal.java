@@ -21,7 +21,7 @@ public class Principal {
 		
 	
 		try{
-			File file = new File("C:/Users/isha1_000/Documents/Isa/ITC/7to Semestre/Matemáticas Computacionales/Proyecto/PrimeraParte/A1.txt");
+			File file = new File("C:/Users/isha1_000/Documents/Isa/ITC/7to Semestre/MatemÃ¡ticas Computacionales/Proyecto/PrimeraParte/A1.txt");
 			FileReader frd = new FileReader(file); 
 			BufferedReader rd = new BufferedReader(frd); 
 			LineNumberReader num = new LineNumberReader(frd);
@@ -68,7 +68,7 @@ public class Principal {
 		catch (IOException e){
 			System.out.println("Error");
 		}
-		//Separación en un mapeo múltiple
+		//SeparaciÃ³n en un mapeo mÃºltiple
 		ListMultimap<String,HashMap<String,String>> pr = ArrayListMultimap.create();
 		HashMap<String,String> me= new HashMap<>(); 
 		
@@ -91,17 +91,17 @@ public class Principal {
 			}
 		}
 		//Print Map
-		/*for(String key: pr.keySet()){
+		for(String key: pr.keySet()){
 			System.out.println(key +"="+ pr.get(key));
-		}*/
+		}
 		
-		//Lista estados finales comprobación 
-		/*for(int m=0; m<nuevosEstados.size();m++){
+		//Lista estados finales comprobaciÃ³n 
+		for(int m=0; m<nuevosEstados.size();m++){
 			System.out.println(nuevosEstados.get(m));
-		}*/
+		}
 		
 		//Tabla de transiciones 
-		/*System.out.println("Tabla de transiciones");
+		System.out.println("Tabla de transiciones");
 		String tabla [][]= new String[estados.length+1][alf.length+1];
 		int o,p=1; 
 		tabla[0][0]=null;
@@ -114,7 +114,7 @@ public class Principal {
 		for(String[] row: tabla ){
 			printRow(row);
 		}
-		*/
+		
 		//Mapa de transiciones finales 
 		ListMultimap<String,HashMap<String,String>> tfinl = ArrayListMultimap.create();
 		HashMap<String,String> mox= new HashMap<>();
